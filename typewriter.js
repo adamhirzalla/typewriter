@@ -1,13 +1,10 @@
 const sentence = "hello there from lighthouse labs";
-const node = process.stdout;
-let time = 0;
 let iteration = 0;
-for (const char of sentence) {
-  time += 50;
+for (let i = 0; i < sentence.length; i++) {
   setTimeout(() => {
-    node.write(char);
+    process.stdout.write(sentence[i]);
     iteration++;
     if (iteration === sentence.length)
-      console.log('\n');
-  }, time);
+      console.log();
+  }, 50 * i);
 }
